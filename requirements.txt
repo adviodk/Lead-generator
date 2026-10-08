@@ -1,0 +1,12 @@
+# Python >=3.12 (scrapegraphai requires it)
+scrapegraphai==2.2.2
+playwright==1.62.0
+beautifulsoup4==4.15.0
+requests==2.34.2
+python-dotenv==1.2.3
+gspread==6.2.1
+google-auth==2.57.0
+google-auth-oauthlib==1.4.1
+langchain-anthropic==1.7.0
+langchain-google-genai==4.3.7
+langchain-openai==1.6.0

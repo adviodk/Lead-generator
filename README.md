@@ -45,3 +45,25 @@ Nothing is installed system-wide.
 
 Re-running is safe: rows already in the sheet (matched on phone, else name) are skipped.
 Every run also writes a per-lead KEEP/drop log to `leads.log`.
+
+## Setup på en ny computer (Windows / Git Bash)
+
+```bash
+git clone https://github.com/adviodk/Lead-generator.git
+cd Lead-generator
+
+# Python 3.12 + venv (uv henter Python selv)
+pip install uv
+uv python install 3.12
+uv venv --python 3.12 .venv
+uv pip install -r requirements.txt          # Windows: tilføj --python .venv/Scripts/python hvis den ikke finder venv
+.venv/Scripts/python -m playwright install chromium
+
+cp .env.example .env                        # udfyld nøgler (se nedenfor)
+```
+
+Hemmeligheder ligger IKKE i repoet. Kopiér dem manuelt fra den gamle computer:
+`.env`, `credentials.json`, `token.json` (placeres i projektets rod).
+Mangler `token.json`, åbner første kørsel af `.venv/Scripts/python sheets.py` et browser-login.
+
+Kør scripts med `.venv/Scripts/python <script>.py` (macOS/Linux: `.venv/bin/python`).
